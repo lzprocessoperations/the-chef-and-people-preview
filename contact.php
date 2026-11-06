@@ -5,9 +5,14 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-$recipient = "info@thechefandpeople.co.uk";
 
-$maxFileSize = 5 * 1024 * 1024;
+$recipient =
+    "info@thechefandpeople.co.uk";
+
+
+$maxFileSize =
+    5 * 1024 * 1024;
+
 
 $allowedExtensions = [
     "pdf",
@@ -16,13 +21,38 @@ $allowedExtensions = [
 ];
 
 
-$name = trim($_POST["name"] ?? "");
-$email = trim($_POST["email"] ?? "");
-$phone = trim($_POST["phone"] ?? "");
-$enquiryType = trim($_POST["enquiry_type"] ?? "");
-$message = trim($_POST["message"] ?? "");
+$name =
+    trim(
+        $_POST["name"] ?? ""
+    );
 
-$privacyAccepted = isset($_POST["privacy"]);
+
+$email =
+    trim(
+        $_POST["email"] ?? ""
+    );
+
+
+$phone =
+    trim(
+        $_POST["phone"] ?? ""
+    );
+
+
+$enquiryType =
+    trim(
+        $_POST["enquiry_type"] ?? ""
+    );
+
+
+$message =
+    trim(
+        $_POST["message"] ?? ""
+    );
+
+
+$privacyAccepted =
+    isset($_POST["privacy"]);
 
 
 if (
@@ -36,7 +66,12 @@ if (
 }
 
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (
+    !filter_var(
+        $email,
+        FILTER_VALIDATE_EMAIL
+    )
+) {
     redirectWithError();
 }
 
@@ -58,36 +93,75 @@ $subject =
 
 $body = "";
 
-$body .= "New enquiry from The Chef & People website\n\n";
 
-$body .= "Name:\n";
-$body .= $name . "\n\n";
+$body .=
+    "New enquiry from The Chef & People website\n\n";
 
-$body .= "Email:\n";
-$body .= $email . "\n\n";
 
-$body .= "Phone:\n";
-$body .= ($phone !== "" ? $phone : "Not provided") . "\n\n";
+$body .=
+    "Name:\n";
 
-$body .= "Enquiry type:\n";
-$body .= $enquiryType . "\n\n";
+$body .=
+    $name .
+    "\n\n";
 
-$body .= "Message:\n";
-$body .= $message . "\n\n";
 
-$body .= "Privacy consent:\n";
-$body .= "Accepted\n";
+$body .=
+    "Email:\n";
+
+$body .=
+    $email .
+    "\n\n";
+
+
+$body .=
+    "Phone:\n";
+
+$body .=
+    (
+        $phone !== ""
+        ? $phone
+        : "Not provided"
+    ) .
+    "\n\n";
+
+
+$body .=
+    "Enquiry type:\n";
+
+$body .=
+    $enquiryType .
+    "\n\n";
+
+
+$body .=
+    "Message:\n";
+
+$body .=
+    $message .
+    "\n\n";
+
+
+$body .=
+    "Privacy consent:\n";
+
+$body .=
+    "Accepted\n";
 
 
 $headers = [];
+
 
 $headers[] =
     "From: The Chef & People Website <" .
     $recipient .
     ">";
 
+
 $headers[] =
-    "Reply-To: " . $email;
+    "Reply-To: " .
+    $email;
+
 
 $headers[] =
     "MIME-Version: 1.0";
@@ -95,23 +169,32 @@ $headers[] =
 
 $hasAttachment =
     isset($_FILES["cv"]) &&
-    $_FILES["cv"]["error"] !== UPLOAD_ERR_NO_FILE;
+    $_FILES["cv"]["error"] !==
+    UPLOAD_ERR_NO_FILE;
 
 
 if ($hasAttachment) {
 
-    if ($_FILES["cv"]["error"] !== UPLOAD_ERR_OK) {
+    if (
+        $_FILES["cv"]["error"] !==
+        UPLOAD_ERR_OK
+    ) {
         redirectWithError();
     }
 
 
-    if ($_FILES["cv"]["size"] > $maxFileSize) {
+    if (
+        $_FILES["cv"]["size"] >
+        $maxFileSize
+    ) {
         redirectWithError();
     }
 
 
     $originalFileName =
-        basename($_FILES["cv"]["name"]);
+        basename(
+            $_FILES["cv"]["name"]
+        );
 
 
     $extension =
@@ -123,11 +206,13 @@ if ($hasAttachment) {
         );
 
 
-    if (!in_array(
-        $extension,
-        $allowedExtensions,
-        true
-    )) {
+    if (
+        !in_array(
+            $extension,
+            $allowedExtensions,
+            true
+        )
+    ) {
         redirectWithError();
     }
 
@@ -136,16 +221,24 @@ if ($hasAttachment) {
         $_FILES["cv"]["tmp_name"];
 
 
-    if (!is_uploaded_file($temporaryFile)) {
+    if (
+        !is_uploaded_file(
+            $temporaryFile
+        )
+    ) {
         redirectWithError();
     }
 
 
     $fileContent =
-        file_get_contents($temporaryFile);
+        file_get_contents(
+            $temporaryFile
+        );
 
 
-    if ($fileContent === false) {
+    if (
+        $fileContent === false
+    ) {
         redirectWithError();
     }
 
@@ -167,16 +260,20 @@ if ($hasAttachment) {
 
     $emailBody = "";
 
+
     $emailBody .=
         "--" .
         $boundary .
         "\r\n";
 
+
     $emailBody .=
         "Content-Type: text/plain; charset=UTF-8\r\n";
 
+
     $emailBody .=
         "Content-Transfer-Encoding: 8bit\r\n\r\n";
+
 
     $emailBody .=
         $body .
@@ -185,7 +282,9 @@ if ($hasAttachment) {
 
     $encodedFile =
         chunk_split(
-            base64_encode($fileContent)
+            base64_encode(
+                $fileContent
+            )
         );
 
 
@@ -202,14 +301,17 @@ if ($hasAttachment) {
         $boundary .
         "\r\n";
 
+
     $emailBody .=
         'Content-Type: application/octet-stream; name="' .
         $safeFileName .
         '"' .
         "\r\n";
 
+
     $emailBody .=
         "Content-Transfer-Encoding: base64\r\n";
+
 
     $emailBody .=
         'Content-Disposition: attachment; filename="' .
@@ -217,9 +319,11 @@ if ($hasAttachment) {
         '"' .
         "\r\n\r\n";
 
+
     $emailBody .=
         $encodedFile .
         "\r\n";
+
 
     $emailBody .=
         "--" .
@@ -231,16 +335,22 @@ if ($hasAttachment) {
     $headers[] =
         "Content-Type: text/plain; charset=UTF-8";
 
-    $emailBody = $body;
+
+    $emailBody =
+        $body;
 }
 
 
-$mailSent = mail(
-    $recipient,
-    $subject,
-    $emailBody,
-    implode("\r\n", $headers)
-);
+$mailSent =
+    mail(
+        $recipient,
+        $subject,
+        $emailBody,
+        implode(
+            "\r\n",
+            $headers
+        )
+    );
 
 
 if ($mailSent) {
@@ -264,3 +374,5 @@ function redirectWithError(): void
 
     exit;
 }
+
+?>
