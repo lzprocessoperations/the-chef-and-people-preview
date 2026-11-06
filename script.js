@@ -1,151 +1,151 @@
-const menuButton = document.getElementById("menuButton");
-const navigation = document.getElementById("navigation");
+document.addEventListener("DOMContentLoaded", () => {
+
+  const menuToggle =
+    document.querySelector(".menu-toggle");
+
+  const mobileNav =
+    document.querySelector(".mobile-nav");
 
 
-/* =========================
-   MOBILE NAVIGATION
-========================= */
+  if (menuToggle && mobileNav) {
 
-if (menuButton && navigation) {
+    menuToggle.addEventListener("click", () => {
 
-    menuButton.addEventListener("click", function () {
+      const isOpen =
+        mobileNav.classList.toggle("active");
 
-        navigation.classList.toggle("open");
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
 
-        const menuIsOpen =
-            navigation.classList.contains("open");
+    });
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            menuIsOpen
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        mobileNav.classList.remove("active");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
         );
 
-    });
-
-
-    const navigationLinks =
-        navigation.querySelectorAll("a");
-
-
-    navigationLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            navigation.classList.remove("open");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        });
+      });
 
     });
 
-}
+
+    document.addEventListener("keydown", (event) => {
+
+      if (event.key === "Escape") {
+
+        mobileNav.classList.remove("active");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
 
 
-/* =========================
-   FLOATING CONTACT
-========================= */
+    window.addEventListener("resize", () => {
 
-const floatingContact =
-    document.getElementById("floatingContact");
+      if (window.innerWidth > 760) {
 
-const floatingClose =
-    document.getElementById("floatingClose");
+        mobileNav.classList.remove("active");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+  }
 
 
-if (floatingContact && floatingClose) {
-
-    floatingClose.addEventListener(
-        "click",
-        function () {
-
-            floatingContact.style.display = "none";
-
-        }
+  const params =
+    new URLSearchParams(
+      window.location.search
     );
 
-}
+
+  const role =
+    params.get("role");
+
+  const sent =
+    params.get("sent");
+
+  const error =
+    params.get("error");
 
 
-/* =========================
-   FORM SUCCESS MESSAGE
-========================= */
+  const enquiryType =
+    document.querySelector("#enquiry_type");
 
-const formSuccess =
-    document.getElementById("formSuccess");
-
-
-const urlParameters =
-    new URLSearchParams(window.location.search);
+  const message =
+    document.querySelector("#message");
 
 
-if (
-    formSuccess &&
-    urlParameters.get("sent") === "1"
-) {
+  if (role && enquiryType && message) {
 
-    formSuccess.hidden = false;
+    enquiryType.value = "Candidate";
 
-
-    window.setTimeout(function () {
-
-        formSuccess.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
-    }, 200);
-
-
-    /*
-        Remove ?sent=1 from the address bar
-        only when the site is running through
-        http or https.
-
-        This avoids a browser security error
-        when testing locally with file://
-    */
-
-    if (window.location.protocol !== "file:") {
-
-        const cleanUrl =
-            window.location.pathname +
-            window.location.hash;
-
-
-        window.history.replaceState(
-            {},
-            document.title,
-            cleanUrl
-        );
-
-    }
-
-}
-
-
-/* =========================
-   WINDOW RESIZE
-========================= */
-
-window.addEventListener("resize", function () {
 
     if (
-        window.innerWidth > 760 &&
-        navigation &&
-        menuButton
+      role.toLowerCase() ===
+      "general application"
     ) {
 
-        navigation.classList.remove("open");
+      message.value =
+        "Hi, I would like to send my CV and register my interest in future hospitality opportunities.";
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+    } else {
+
+      message.value =
+        `Hi, I would like to apply for the ${role} position.`;
 
     }
+
+  }
+
+
+  const formSuccess =
+    document.querySelector("#formSuccess");
+
+  const formError =
+    document.querySelector("#formError");
+
+
+  if (sent === "1" && formSuccess) {
+
+    formSuccess.style.display = "block";
+
+    formSuccess.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+  }
+
+
+  if (error === "1" && formError) {
+
+    formError.style.display = "block";
+
+    formError.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+  }
 
 });

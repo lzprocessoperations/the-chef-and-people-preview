@@ -1,544 +1,691 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Hospitality Recruiters | The Chef & People</title>
+  <title>Contact | The Chef & People</title>
 
-    <meta
-        name="description"
-        content="Contact The Chef & People about hospitality recruitment, staffing requirements and job opportunities across London and Manchester."
-    >
+  <meta
+    name="description"
+    content="Contact The Chef & People for hospitality recruitment, consultancy, menu development or to send your CV."
+  >
 
-    <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="canonical"
-        href="https://thechefandpeople.co.uk/contact.html"
-    >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-    <!-- OPEN GRAPH -->
-
-    <meta
-        property="og:title"
-        content="Contact The Chef & People | Hospitality Recruitment"
-    >
-
-    <meta
-        property="og:description"
-        content="Looking for hospitality staff or your next opportunity? Start a conversation with The Chef & People."
-    >
-
-    <meta property="og:type" content="website">
-
-    <meta
-        property="og:url"
-        content="https://thechefandpeople.co.uk/contact.html"
-    >
-
-    <meta
-        property="og:image"
-        content="https://thechefandpeople.co.uk/images/front-of-house.webp"
-    >
-
-    <meta
-        property="og:site_name"
-        content="The Chef & People"
-    >
-
-
-    <!-- TWITTER / SOCIAL -->
-
-    <meta
-        name="twitter:card"
-        content="summary_large_image"
-    >
-
-    <meta
-        name="twitter:title"
-        content="Contact The Chef & People | Hospitality Recruitment"
-    >
-
-    <meta
-        name="twitter:description"
-        content="Looking for hospitality staff or your next opportunity? Start a conversation with The Chef & People."
-    >
-
-    <meta
-        name="twitter:image"
-        content="https://thechefandpeople.co.uk/images/front-of-house.webp"
-    >
-
-
-    <!-- GOOGLE FONT -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <!-- SITE CSS -->
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="contact-page">
+<body>
 
-    <!-- ANNOUNCEMENT BAR -->
-    <div class="announcement-bar">
-        Looking for hospitality staff or your next opportunity?
-        <a href="contact.html">Talk to The Chef and People.</a>
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+
+      <p>
+        Hiring, opening a new site or building a team?
+        <a href="#contact-form">Talk to us.</a>
+      </p>
+
+      <a href="#contact-form" class="top-bar-link">
+        Chat with us
+      </a>
+
     </div>
+  </div>
 
 
-    <!-- HEADER -->
-    <header class="site-header">
+  <header class="site-header">
 
-        <div class="header-inner">
+    <div class="container header-inner">
 
-            <a href="index.html" class="logo">
-                The Chef &amp; People
-            </a>
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="The Chef & People home"
+      >
+        <span class="logo-mark">TCP</span>
 
-            <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Open menu"
-                aria-expanded="false"
-            >
-                ☰
-            </button>
-
-            <nav
-                class="navigation"
-                id="navigation"
-            >
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="services.html#staff">
-                    Find Staff
-                </a>
-
-                <a href="services.html#jobs">
-                    Find Jobs
-                </a>
-
-                <a href="about.html">
-                    About Us
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </nav>
-
-            <a
-                href="contact.html"
-                class="header-cta"
-            >
-                Send CV
-            </a>
-
-        </div>
-
-    </header>
-
-
-    <main>
-
-        <!-- PAGE HERO -->
-        <section class="page-hero">
-
-            <div class="page-width">
-
-                <span class="eyebrow">
-                    CONTACT
-                </span>
-
-                <h1>
-                    Tell us what you're looking for.
-                </h1>
-
-                <p>
-                    Hiring, looking for a role or simply want to start
-                    a conversation? Send us a message.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT -->
-        <section class="section">
-
-            <div class="page-width">
-
-                <!-- SUCCESS MESSAGE -->
-                <div
-                    id="formSuccess"
-                    class="info-card"
-                    role="status"
-                    aria-live="polite"
-                    hidden
-                    style="margin-bottom: 36px;"
-                >
-
-                    <h3>
-                        Thank you — your message has been sent.
-                    </h3>
-
-                    <p>
-                        We've received your enquiry and will be in touch.
-                    </p>
-
-                </div>
-
-
-                <!-- CONTACT OPTIONS -->
-                <div class="contact-options">
-
-                    <article class="choice-card">
-
-                        <h3>
-                            I need staff
-                        </h3>
-
-                        <p>
-                            Tell us about the role,
-                            your business and the kind of person you need.
-                        </p>
-
-                    </article>
-
-
-                    <article class="choice-card">
-
-                        <h3>
-                            I'm looking for work
-                        </h3>
-
-                        <p>
-                            Tell us about your experience,
-                            the role you're looking for
-                            and your next move.
-                        </p>
-
-                    </article>
-
-
-                    <article class="choice-card">
-
-                        <h3>
-                            Join our network
-                        </h3>
-
-                        <p>
-                            Introduce yourself and stay connected
-                            for future hospitality opportunities.
-                        </p>
-
-                    </article>
-
-                </div>
-
-
-                <!-- CONTACT FORM -->
-                <div class="contact-form-wrap">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            START A CONVERSATION
-                        </span>
-
-                        <h2>
-                            Send us a message.
-                        </h2>
-
-                        <p>
-                            Complete the form and we'll have the information
-                            we need to start the conversation.
-                        </p>
-
-                    </div>
-
-
-                    <form
-                        class="contact-form"
-                        action="contact.php"
-                        method="post"
-                    >
-
-                        <div class="form-group">
-
-                            <label for="name">
-                                Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                autocomplete="name"
-                                maxlength="100"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="email">
-                                Email
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                autocomplete="email"
-                                maxlength="150"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="company">
-                                Company (optional)
-                            </label>
-
-                            <input
-                                type="text"
-                                id="company"
-                                name="company"
-                                autocomplete="organization"
-                                maxlength="150"
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="message">
-                                How can we help?
-                            </label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                maxlength="5000"
-                                required
-                            ></textarea>
-
-                        </div>
-
-
-                        <button
-                            type="submit"
-                            class="button primary-button"
-                        >
-                            Send Message
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FINAL CTA -->
-        <section class="cta-section">
-
-            <div class="page-width">
-
-                <div class="cta-content">
-
-                    <span class="eyebrow light">
-                        THE CHEF &amp; PEOPLE
-                    </span>
-
-                    <h2>
-                        Hospitality recruitment starts with the right conversation.
-                    </h2>
-
-                    <p>
-                        Whether you're hiring or looking for your next role,
-                        tell us what you need.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-
-        <div class="page-width footer-grid">
-
-            <div>
-
-                <a
-                    href="index.html"
-                    class="footer-logo"
-                >
-                    The Chef &amp; People
-                </a>
-
-                <p>
-                    Hospitality recruitment for businesses
-                    and professionals.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Explore
-                </h4>
-
-                <a href="services.html#staff">
-                    Find Staff
-                </a>
-
-                <a href="services.html#jobs">
-                    Find Jobs
-                </a>
-
-                <a href="about.html">
-                    About Us
-                </a>
-
-                <a href="how-it-works.html">
-                    How It Works
-                </a>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Contact
-                </h4>
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-                <a href="contact.html">
-                    Send CV
-                </a>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Legal
-                </h4>
-
-                <a href="privacy.html">
-                    Privacy Policy
-                </a>
-
-                <a href="terms.html">
-                    Terms
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="page-width footer-bottom">
-
-            <p>
-                © 2026 The Chef &amp; People. All rights reserved.
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <!-- HIDDEN ON CONTACT PAGE BY CSS -->
-    <div
-        class="floating-contact"
-        id="floatingContact"
-    >
-
-        <button
-            class="floating-close"
-            id="floatingClose"
-            aria-label="Close contact box"
-        >
-            ×
-        </button>
-
-        <strong>
-            Talk to us
-        </strong>
-
-        <span>
-            Looking for hospitality staff or your next opportunity?
+        <span class="logo-text">
+          The Chef & People
         </span>
+      </a>
 
-        <a href="contact.html">
-            Talk to us →
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+
+        <a href="services.html">Services</a>
+
+        <a href="how-it-works.html">How it works</a>
+
+        <a href="jobs.html">Jobs</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+      </nav>
+
+
+      <div class="header-actions">
+
+        <a href="#contact-form" class="text-link">
+          Send CV
         </a>
 
+        <a
+          href="#contact-form"
+          class="btn btn-primary btn-small"
+        >
+          Chat with us
+        </a>
+
+      </div>
+
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
 
 
-    <!-- HIDDEN ON CONTACT PAGE BY CSS -->
-    <a
-        href="contact.html"
-        class="feedback-tab"
-    >
-        Contact
-    </a>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+
+      <a href="services.html">Services</a>
+
+      <a href="how-it-works.html">How it works</a>
+
+      <a href="jobs.html">Jobs</a>
+
+      <a href="about.html">About</a>
+
+      <a href="contact.html">Contact</a>
+
+      <a href="#contact-form">Send CV</a>
+
+    </nav>
+
+  </header>
 
 
-    <script src="script.js"></script>
+  <main>
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <p class="eyebrow">
+            Contact
+          </p>
+
+          <h1>
+            Tell us what you need,
+            <span>and let's start there.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Whether you're hiring, planning an opening,
+            working on a menu or looking for your next hospitality role,
+            send us a message.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="#contact-form"
+              class="btn btn-primary"
+            >
+              Send an enquiry
+            </a>
+
+            <a
+              href="jobs.html"
+              class="btn btn-outline"
+            >
+              View jobs
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-quick-card">
+
+          <p class="eyebrow">
+            Get in touch
+          </p>
+
+          <h3>
+            The Chef & People
+          </h3>
+
+          <a
+            href="mailto:info@thechefandpeople.co.uk"
+            class="contact-detail"
+          >
+            info@thechefandpeople.co.uk
+          </a>
+
+          <span class="contact-detail">
+            London & Manchester
+          </span>
+
+          <a
+            href="#contact-form"
+            class="btn btn-primary"
+          >
+            Send a message
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section services-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              How can we help?
+            </p>
+
+            <h2>
+              Start with the reason you're getting in touch.
+            </h2>
+
+          </div>
+
+          <p class="section-intro">
+            Tell us enough to understand what you need,
+            and we'll take it from there.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card">
+
+            <span class="service-number">01</span>
+
+            <h3>I'm hiring</h3>
+
+            <p>
+              Tell us about the role, your business,
+              your location and what kind of person you need.
+            </p>
+
+            <a href="#contact-form" class="arrow-link">
+              Start an enquiry →
+            </a>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">02</span>
+
+            <h3>I need consultancy</h3>
+
+            <p>
+              Opening a venue, developing a menu
+              or looking for operational support?
+              Tell us what you're working on.
+            </p>
+
+            <a href="#contact-form" class="arrow-link">
+              Tell us more →
+            </a>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">03</span>
+
+            <h3>I'm looking for work</h3>
+
+            <p>
+              Browse current jobs or send us your CV
+              and tell us what kind of hospitality role
+              you're looking for.
+            </p>
+
+            <a href="jobs.html" class="arrow-link">
+              View current jobs →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section" id="contact-form">
+
+      <div class="container contact-grid">
+
+        <div class="contact-intro">
+
+          <p class="eyebrow">
+            Send us a message
+          </p>
+
+          <h2>
+            Let's talk.
+          </h2>
+
+          <p>
+            Complete the form and give us a little context
+            about what you're looking for.
+          </p>
+
+
+          <div class="contact-info-block">
+
+            <div>
+
+              <span class="contact-label">
+                Email
+              </span>
+
+              <p>
+                <a href="mailto:info@thechefandpeople.co.uk">
+                  info@thechefandpeople.co.uk
+                </a>
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span class="contact-label">
+                Areas
+              </span>
+
+              <p>
+                London & Manchester
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span class="contact-label">
+                Candidates
+              </span>
+
+              <p>
+                You can attach your CV using the form.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div
+            id="formSuccess"
+            class="form-message form-success"
+            style="display: none;"
+          >
+            <strong>Thank you.</strong>
+
+            <p>
+              Your message has been sent successfully.
+              We'll get back to you as soon as possible.
+            </p>
+          </div>
+
+
+          <div
+            id="formError"
+            class="form-message form-error"
+            style="display: none;"
+          >
+            <strong>Something went wrong.</strong>
+
+            <p>
+              Your message could not be sent.
+              Please try again or email us directly at
+              <a href="mailto:info@thechefandpeople.co.uk">
+                info@thechefandpeople.co.uk
+              </a>.
+            </p>
+          </div>
+
+
+          <form
+            class="contact-form"
+            action="contact.php"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="name">
+                  Name
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="email">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="phone">
+                  Phone
+                  <span class="optional">
+                    optional
+                  </span>
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="enquiry_type">
+                  What can we help with?
+                </label>
+
+                <select
+                  id="enquiry_type"
+                  name="enquiry_type"
+                  required
+                >
+
+                  <option value="">
+                    Select an option
+                  </option>
+
+                  <option value="Hiring">
+                    I'm hiring
+                  </option>
+
+                  <option value="Opening & Consultancy">
+                    Opening & Consultancy
+                  </option>
+
+                  <option value="Menu Development">
+                    Menu Development
+                  </option>
+
+                  <option value="Candidate">
+                    I'm looking for work
+                  </option>
+
+                  <option value="Other">
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="message">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us a little about what you're looking for..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="cv">
+                Attach CV
+                <span class="optional">
+                  optional — PDF, DOC or DOCX
+                </span>
+              </label>
+
+              <input
+                type="file"
+                id="cv"
+                name="cv"
+                accept=".pdf,.doc,.docx"
+              >
+
+            </div>
+
+
+            <div class="form-consent">
+
+              <input
+                type="checkbox"
+                id="privacy"
+                name="privacy"
+                required
+              >
+
+              <label for="privacy">
+                I agree that The Chef & People may use the information
+                provided to respond to my enquiry.
+                See our
+                <a href="privacy.html">
+                  Privacy Policy
+                </a>.
+              </label>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+            >
+              Send message
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <a
+    href="#contact-form"
+    class="floating-chat"
+    aria-label="Chat with The Chef & People"
+  >
+    <span class="floating-chat-text">
+      Chat with us 👋
+    </span>
+
+    <span class="floating-chat-icon">
+      💬
+    </span>
+  </a>
+
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="footer-logo"
+        >
+          The Chef & People
+        </a>
+
+        <p>
+          Chef-led hospitality recruitment and consultancy
+          across London and Manchester.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Services</h4>
+
+        <a href="services.html#recruitment">
+          Permanent Recruitment
+        </a>
+
+        <a href="services.html#opening">
+          Opening & Consultancy
+        </a>
+
+        <a href="services.html#menu">
+          Menu Development
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Company</h4>
+
+        <a href="about.html">About</a>
+
+        <a href="how-it-works.html">How it works</a>
+
+        <a href="jobs.html">Current jobs</a>
+
+        <a href="#contact-form">Send your CV</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Contact</h4>
+
+        <a href="#contact-form">
+          Chat with us
+        </a>
+
+        <a href="mailto:info@thechefandpeople.co.uk">
+          info@thechefandpeople.co.uk
+        </a>
+
+        <span>
+          London & Manchester
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <p>
+        © 2026 The Chef & People. All rights reserved.
+      </p>
+
+      <div>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
